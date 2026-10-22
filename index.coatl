@@ -1,0 +1,16 @@
+int hola = 1.;
+int adios = 10.25;
+#Esto es un comentario
+
+if(10 >= 20){
+}
+if(10 <= 20){
+}
+if(10 < 20){
+}
+if(10 > 20){
+}
+if(10 == 20){
+}
+if(10 != 20){
+}
