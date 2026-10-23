@@ -1,6 +1,7 @@
 package mx.tecnm.leon;
 
-import mx.tecnm.leon.exceptions.LexicalException;
+import mx.tecnm.leon.Lexer.Lexer;
+import mx.tecnm.leon.Lexer.exceptions.LexicalException;
 
 import java.io.IOException;
 import java.nio.file.Files;

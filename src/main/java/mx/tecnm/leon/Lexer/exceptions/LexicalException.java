@@ -1,4 +1,4 @@
-package mx.tecnm.leon.exceptions;
+package mx.tecnm.leon.Lexer.exceptions;
 
 public class LexicalException extends Exception{
 

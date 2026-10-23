@@ -1,4 +1,4 @@
-package mx.tecnm.leon;
+package mx.tecnm.leon.Lexer;
 
 public enum TokenType {
     INT,
