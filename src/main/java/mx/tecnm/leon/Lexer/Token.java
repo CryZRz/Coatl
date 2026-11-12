@@ -3,10 +3,12 @@ package mx.tecnm.leon.Lexer;
 public class Token {
     public String lexeme;
     public TokenType type;
+    public Object literal;
 
-    public Token(String lexeme, TokenType type){
+    public Token(String lexeme, TokenType type, Object literal){
         this.lexeme = lexeme;
         this.type = type;
+        this.literal = literal;
     }
 
 

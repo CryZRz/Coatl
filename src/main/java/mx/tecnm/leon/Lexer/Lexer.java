@@ -42,7 +42,7 @@ public class Lexer {
             generateToken();
         }
 
-        tokens.add(new Token("", TokenType.EOF));
+        tokens.add(new Token("", TokenType.EOF, null));
         return tokens;
     }
 
@@ -118,9 +118,9 @@ public class Lexer {
             while (!isEnd() && isNumeric(peek()))
                 advance();
 
-            addToken(TokenType.REAL_LITERAL);
+            addToken(TokenType.REAL_LITERAL, Double.parseDouble(source.substring(start, current)));
         }else{
-         addToken(TokenType.INTEGER_LITERAL);
+         addToken(TokenType.INTEGER_LITERAL, Integer.parseInt(source.substring(start, current)));
         }
     }
 
@@ -146,7 +146,12 @@ public class Lexer {
 
     private void addToken(TokenType type){
         var lexeme = source.substring(start, current);
-        tokens.add(new Token(lexeme, type));
+        tokens.add(new Token(lexeme, type, null));
+    }
+
+    private void addToken(TokenType type, Object literal){
+        var lexeme = source.substring(start, current);
+        tokens.add(new Token(lexeme, type, literal));
     }
 
     private boolean isEnd(){
