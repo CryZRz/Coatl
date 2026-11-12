@@ -1,4 +1,4 @@
-int hola = 1.;
+int hola = 1.21;
 int adios = 10.25;
 #Esto es un comentario
 

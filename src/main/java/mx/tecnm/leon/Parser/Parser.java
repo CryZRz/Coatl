@@ -31,7 +31,7 @@ public class Parser {
          | assignment ";"
          | if_statement
          | while_statement
-         | compound_statement
+         | compound_statement {}
          | print_statement
     * */
     private Stmt statement() {

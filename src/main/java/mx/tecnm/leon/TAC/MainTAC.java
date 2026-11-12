@@ -39,8 +39,7 @@ public class MainTAC {
             var lexer = new Lexer(source);
             var tokens = lexer.generateTokens();
 
-            var parser 
-            = new Parser(tokens);
+            var parser = new Parser(tokens);
             var statements = parser.parse();
 
             var generator = new TACGenerator();

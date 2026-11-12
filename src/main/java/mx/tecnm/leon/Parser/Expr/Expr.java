@@ -10,12 +10,12 @@ abstract public class Expr {
     public static class Binary extends Expr{
         private final Expr left;
         private final Expr right;
-        private final Token token;
+        private final Token operator;
 
         public Binary(Expr left, Token operator, Expr right ){
             this.left = left;
             this.right = right;
-            this.token = operator;
+            this.operator = operator;
         }
 
         public Expr getLeft() {
@@ -26,8 +26,8 @@ abstract public class Expr {
             return right;
         }
 
-        public Token getToken() {
-            return token;
+        public Token getOperator() {
+            return operator;
         }
 
         @Override

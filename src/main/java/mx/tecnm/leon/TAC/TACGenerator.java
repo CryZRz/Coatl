@@ -118,7 +118,7 @@ public class TACGenerator implements StmtVisitor<Void>, ExprVisitor<String> {
         var right = expr.getRight().accept(this);
         var temp = newTemp();
 
-        instructions.add(new TACInstruction(expr.getToken().lexeme, left, right, temp));
+        instructions.add(new TACInstruction(expr.getOperator().lexeme, left, right, temp));
         return temp;
     }
 
