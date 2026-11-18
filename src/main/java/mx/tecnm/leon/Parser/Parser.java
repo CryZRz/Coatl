@@ -34,6 +34,8 @@ public class Parser {
          | compound_statement {}
          | print_statement
     * */
+    //int bool real
+    //if
     private Stmt statement() {
         if (match(TokenType.INT, TokenType.BOOL, TokenType.REAL)) {
             return declaration();
@@ -120,9 +122,10 @@ public class Parser {
     }
 
     /*
-    * declaration → type identifier_init_list ";"
+    * declaration → type identifier_init_list* ";"
     * */
     private Stmt declaration() {
+        //int  a = 10;
         var type = previous();
         var stmt = identifierInitList(type);
         consume(TokenType.SEMICOLON, "Expected ';'");
@@ -139,7 +142,7 @@ public class Parser {
             statements.add(identifierInit(type));
         }
 
-        return new Stmt.VarDeclaration(statements);
+        return new Stmt.VarDeclarations(statements);
     }
 
     private Stmt.Var identifierInit(Token type) {
@@ -148,6 +151,7 @@ public class Parser {
             var expr = expression();
             return new Stmt.Var(type, variable, expr);
         }
+
 
         return new Stmt.Var(type, variable, null);
     }
@@ -291,7 +295,10 @@ public class Parser {
     }
 
     private Expr readExpr(){
-        return null;
+        consume(TokenType.LEFT_PAREN, "Expected '(");
+        consume(TokenType.RIGHT_PAREN, "Expected ')");
+
+        return new Expr.Read();
     }
 
     private boolean match(TokenType... types){

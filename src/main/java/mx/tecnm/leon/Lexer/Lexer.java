@@ -1,6 +1,6 @@
 package mx.tecnm.leon.Lexer;
 
-import mx.tecnm.leon.Lexer.exceptions.LexicalException;
+import mx.tecnm.leon.Lexer.Exceptions.LexicalException;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -10,5 +10,5 @@ public interface StmtVisitor<T> {
     T visitBlock(Stmt.Block stmt);
     T visitPrint(Stmt.Print stmt);
     T visitAssignment(Stmt.Assignment stmt);
-    T visitVarDeclaration(Stmt.VarDeclaration stmt);
+    T visitVarDeclarations(Stmt.VarDeclarations stmt);
 }

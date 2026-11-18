@@ -8,9 +8,9 @@ abstract public class Expr {
     public abstract <T> T accept(ExprVisitor<T> visitor);
 
     public static class Binary extends Expr{
-        private final Expr left;
-        private final Expr right;
-        private final Token operator;
+        public final Expr left;
+        public final Expr right;
+        public final Token operator;
 
         public Binary(Expr left, Token operator, Expr right ){
             this.left = left;
@@ -25,8 +25,8 @@ abstract public class Expr {
     }
 
     public static class Unary extends Expr {
-        private final Token op;
-        private final Expr right;
+        public final Token op;
+        public final Expr right;
 
         public Unary(Token op, Expr right){
             this.op = op;
@@ -40,8 +40,8 @@ abstract public class Expr {
     }
 
     public static class Literal extends Expr {
-        private final Object valueOb;
-        private final Token value;
+        public final Object valueOb;
+        public final Token value;
 
         public Literal(Token value, Object valueOb){
             this.value = value;
@@ -55,7 +55,7 @@ abstract public class Expr {
     }
 
     public static class Grouping extends Expr {
-        private final Expr grouping;
+        public final Expr grouping;
 
         public Grouping(Expr grouping){
             this.grouping = grouping;
@@ -68,7 +68,7 @@ abstract public class Expr {
     }
 
     public static class Variable extends Expr{
-        private final Token name;
+        public final Token name;
 
         public Variable(Token name){
             this.name = name;
@@ -89,9 +89,9 @@ abstract public class Expr {
     }
 
     public static class Logical extends Expr {
-        private final Expr left;
-        private final Token operator;
-        private final Expr right;
+        public final Expr left;
+        public final Token operator;
+        public final Expr right;
 
         public Logical(Expr left, Token operator, Expr right) {
             this.left = left;

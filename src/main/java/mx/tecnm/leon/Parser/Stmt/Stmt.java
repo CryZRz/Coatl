@@ -11,8 +11,8 @@ abstract public class Stmt {
     public abstract  <T> T accept(StmtVisitor<T> visitor);
 
    public static class WhileStmt extends Stmt{
-       private final Expr condition;
-       private final Stmt body;
+       public final Expr condition;
+       public final Stmt body;
 
        public WhileStmt(Expr condition, Stmt body){
            this.condition = condition;
@@ -27,9 +27,9 @@ abstract public class Stmt {
    }
 
    public static class IfStmt extends Stmt{
-       private final Expr condition;
-       private final Stmt thenBranch;
-       private final Stmt elseBranch;
+       public final Expr condition;
+       public final Stmt thenBranch;
+       public final Stmt elseBranch;
 
        public IfStmt(Expr condition, Stmt thenBranch, Stmt elseBranch) {
            this.condition = condition;
@@ -44,9 +44,9 @@ abstract public class Stmt {
    }
 
    public static class Var extends Stmt {
-       private final Token type;
-       private final Token name;
-       private final Expr initializer;
+       public final Token type;
+       public final Token name;
+       public final Expr initializer;
 
        public Var(Token type, Token name, Expr initializer){
            this.type = type;
@@ -61,7 +61,7 @@ abstract public class Stmt {
    }
 
    public static class Block extends Stmt {
-       private final List<Stmt> statements;
+       public final List<Stmt> statements;
 
        public Block(List<Stmt> statements){
            this.statements = statements;
@@ -75,7 +75,7 @@ abstract public class Stmt {
    }
 
    public static class Print extends Stmt{
-       private final Expr expr;
+       public final Expr expr;
 
        public Print(Expr expr){
            this.expr = expr;
@@ -88,8 +88,8 @@ abstract public class Stmt {
    }
 
    public static class Assignment extends Stmt{
-       private final Token variable;
-        private final Expr value;
+       public final Token variable;
+       public final Expr value;
 
        public Assignment(Token variable, Expr value) {
            this.variable = variable;
@@ -102,16 +102,16 @@ abstract public class Stmt {
        }
    }
 
-   public static class VarDeclaration extends Stmt{
-       private final List<Stmt.Var> variables;
+   public static class VarDeclarations extends Stmt{
+       public final List<Stmt.Var> variables;
 
-       public VarDeclaration(List<Stmt.Var> variables){
+       public VarDeclarations(List<Stmt.Var> variables){
            this.variables = variables;
        }
 
        @Override
        public <T> T accept(StmtVisitor<T> visitor) {
-           return visitor.visitVarDeclaration(this);
+           return visitor.visitVarDeclarations(this);
        }
    }
 

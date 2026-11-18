@@ -1,16 +1,2 @@
-int hola = 1.21;
-int adios = 10.25;
-#Esto es un comentario
-
-if(10 >= 20){
-}
-if(10 <= 20){
-}
-if(10 < 20){
-}
-if(10 > 20){
-}
-if(10 == 20){
-}
-if(10 != 20){
-}
+int age = read();
+print(age+20);
